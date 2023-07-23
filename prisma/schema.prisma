@@ -1,0 +1,48 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model UserID {
+  id        Int      @id @default(autoincrement())
+  name      String
+  email     String   @unique
+  // その他のユーザ情報項目を追加
+  snsInfo   SNSInfo? @relation(fields: [snsInfo], references: [id])
+  profile   Profile? @relation(fields: [profile], references: [id])
+  matches   Match[]
+}
+
+
+model SNSInfo {
+  id        Int      @id @default(autoincrement())
+  username  String
+  // その他のSNS情報項目を追加
+  user      User     @relation(fields: [userId], references: [id])
+}
+
+model Profile {
+  id        Int      @id @default(autoincrement())
+  bio       String?
+  // その他のプロフィール項目を追加
+  user      User     @relation(fields: [userId], references: [id])
+}
+
+model Match {
+  id        Int      @id @default(autoincrement())
+  matchedAt DateTime @default(now())
+  // その他のマッチ情報項目を追加
+  user      User     @relation(fields: [userId], references: [id])
+}
+
+
+
+
