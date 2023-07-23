@@ -1,19 +1,10 @@
-DB構造を整理
 
-マイグレーションファイル作成
-
-シード入力
-
-コントロールファイル
-リクエストファイル作成
-
-viewファイルを作成
 
 
 # php_kadai05
 
 # React　×　Express・Prisma　×　Docker・Laravel Sailを使った、バックエンドのAPIサーバーからのフロントエンド側への疎通
-![image](https://github.com/tatsuyakusukawa/php_kadai05/assets/130893390/7f605efd-2ee0-4d38-b67d-c3f7e836dc14)
+![image](https://github.com/tatsuyakusukawa/php_kadai05/assets/130893390/eeec7f6a-eff7-4832-bae6-f3ff391cf9b9)
 
 
 
